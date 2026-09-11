@@ -1,17 +1,3 @@
-/**
- * Copies a built registry from the CLI repo into `public/registry`, where the
- * site serves it as static files.
- *
- * The source of truth is `pnpm build:index` in `packages/registry` of the CLI
- * repo, which writes deterministic tarballs and an index whose root hash covers
- * them. This script only moves those bytes; it never rewrites them, because the
- * hash the CLI verifies is computed over exactly what that script emitted.
- *
- *   node scripts/sync-registry.mjs [--source <dist-registry>] [--check]
- *
- * `--check` verifies the copy matches the source without writing, which is what
- * CI would run to catch a hand-edited file under `public/registry`.
- */
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
@@ -41,7 +27,6 @@ const source = resolve(
 const target = join(root, "public", "registry");
 const check = process.argv.includes("--check");
 
-/** Every file under `dir`, POSIX-relative and sorted. */
 async function filesIn(dir, prefix = "") {
   const entries = await readdir(dir, { withFileTypes: true });
   const files = [];
@@ -74,14 +59,11 @@ if (!existsSync(indexPath)) fail(`${source} has no v1/index.json`);
 
 const index = JSON.parse(readFileSync(indexPath, "utf8"));
 
-// The pinned copy must exist, or `atarashi registry pin <version>` 404s.
 const pinnedPath = join(source, "v1", index.version, "index.json");
 if (!existsSync(pinnedPath)) {
   fail(`registry ${index.version} has no immutable copy at v1/${index.version}/index.json`);
 }
 
-// Every entry's tarball must be present, or resolution fails at install time
-// rather than here, on a machine that cannot fix it.
 const missing = index.entries
   .map((entry) => entry.tarball)
   .filter((tarball) => !existsSync(join(source, tarball)));

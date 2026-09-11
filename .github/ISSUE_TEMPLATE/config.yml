@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and ideas
+    url: https://github.com/callmegautam/atarashi/discussions
+    about: Ask a question or float an idea before opening an issue.
+  - name: Bugs in the atarashi CLI
+    url: https://github.com/callmegautam/atarashi/issues/new/choose
+    about: Generation, blueprints and registry contents are maintained in the CLI repo.

@@ -9,9 +9,12 @@
     "lint": "eslint",
     "sync:registry": "node scripts/sync-registry.mjs",
     "check:registry": "node scripts/sync-registry.mjs --check",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "sync:docs": "node scripts/sync-docs.mjs",
+    "check:docs": "node scripts/sync-docs.mjs --check"
   },
   "dependencies": {
+    "marked": "^18.0.12",
     "next": "16.3.4",
     "react": "19.2.8",
     "react-dom": "19.2.8"

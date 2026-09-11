@@ -1,0 +1,40 @@
+name: Bug report
+description: Something on the site is broken
+labels: [bug, needs-triage]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Page
+      placeholder: "https://atarashi.gautamsuthar.in/docs/cli"
+    validations: { required: true }
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: Include console errors and network failures if there are any.
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected instead
+    validations: { required: true }
+  - type: input
+    id: browser
+    attributes:
+      label: Browser, OS and viewport
+      placeholder: "Firefox 145 on Arch Linux, 1440px wide"
+    validations: { required: true }
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Theme
+      options: [Light, Dark, Both]
+    validations: { required: true }
+  - type: checkboxes
+    id: extensions
+    attributes:
+      label: Checks
+      options:
+        - label: Reproduced with browser extensions disabled
+        - label: This is a site bug, not a CLI or documentation wording bug

@@ -1,26 +1,318 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --ground: #ededea;
+  --ground-2: #e2e2de;
+  --ground-3: #d4d4cf;
+  --text: #111110;
+  --text-2: #44443e;
+  --text-3: #6a6962;
+  --accent: #e8481f;
+  --accent-text: #b32410;
+  --on-accent: #111110;
+  --plate-y: 5rem;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #0e0e0d;
+  --ground-2: #1a1a18;
+  --ground-3: #262622;
+  --text: #e9e7e1;
+  --text-2: #a6a39b;
+  --text-3: #807e77;
+  --accent: #ff4a26;
+  --accent-text: #ff7a5c;
+  --on-accent: #0e0e0d;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ground: var(--ground);
+  --color-ground-2: var(--ground-2);
+  --color-ground-3: var(--ground-3);
+  --color-text: var(--text);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-on-accent: var(--on-accent);
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (min-width: 768px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --plate-y: 8.5rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--ground);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  [data-on-accent] :focus-visible {
+    outline-color: var(--on-accent);
+  }
+
+  code,
+  kbd {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+@utility display-xl {
+  font-size: clamp(2.75rem, 9vw, 7.5rem);
+  font-weight: 700;
+  font-stretch: 88%;
+  letter-spacing: -0.035em;
+  line-height: 0.9;
+  text-wrap: balance;
+}
+
+@utility display-l {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-weight: 700;
+  font-stretch: 95%;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+@utility display-m {
+  font-size: clamp(1.375rem, 2.6vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+@utility lede {
+  font-size: clamp(1.0625rem, 1.4vw, 1.3125rem);
+  font-weight: 400;
+  letter-spacing: -0.008em;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+@utility mono-sm {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+@layer components {
+  .doc-prose {
+    color: var(--text-2);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .doc-prose > * + * {
+    margin-top: 1.25rem;
+  }
+
+  .doc-prose h2,
+  .doc-prose h3,
+  .doc-prose h4 {
+    color: var(--text);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    scroll-margin-top: 6rem;
+    text-wrap: balance;
+  }
+
+  .doc-prose h2 {
+    font-size: 1.625rem;
+    margin-top: 3.5rem;
+  }
+
+  .doc-prose h3 {
+    font-size: 1.25rem;
+    margin-top: 2.5rem;
+  }
+
+  .doc-prose h4 {
+    font-size: 1.0625rem;
+    margin-top: 2rem;
+  }
+
+  .doc-prose h2 + *,
+  .doc-prose h3 + *,
+  .doc-prose h4 + * {
+    margin-top: 1rem;
+  }
+
+  .doc-prose a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .doc-prose a:hover {
+    color: var(--accent-text);
+  }
+
+  .doc-prose strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .doc-prose ul,
+  .doc-prose ol {
+    padding-left: 1.25rem;
+  }
+
+  .doc-prose ul {
+    list-style: none;
+  }
+
+  .doc-prose ul > li {
+    position: relative;
+  }
+
+  .doc-prose ul > li::before {
+    background: var(--accent);
+    content: "";
+    height: 2px;
+    left: -1.25rem;
+    position: absolute;
+    top: 0.8em;
+    width: 8px;
+  }
+
+  .doc-prose ol {
+    list-style: decimal;
+  }
+
+  .doc-prose li + li {
+    margin-top: 0.5rem;
+  }
+
+  .doc-prose li > ul,
+  .doc-prose li > ol {
+    margin-top: 0.5rem;
+  }
+
+  .doc-prose code {
+    background: var(--ground-2);
+    color: var(--text);
+    font-size: 0.875em;
+    padding: 0.15em 0.4em;
+  }
+
+  .doc-prose pre {
+    background: var(--ground-2);
+    overflow-x: auto;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .doc-prose pre code {
+    background: transparent;
+    color: var(--text);
+    font-size: 0.875rem;
+    line-height: 1.7;
+    padding: 0;
+  }
+
+  .doc-prose blockquote {
+    border-left: 2px solid var(--accent);
+    padding-left: 1.25rem;
+  }
+
+  .doc-prose hr {
+    border: 0;
+    border-top: 1px solid var(--ground-3);
+    margin: 3rem 0;
+  }
+
+  .doc-table {
+    overflow-x: auto;
+  }
+
+  .doc-table table {
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    min-width: 100%;
+    white-space: nowrap;
+  }
+
+  .doc-table th {
+    background: var(--ground-2);
+    color: var(--text);
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .doc-table th,
+  .doc-table td {
+    border-bottom: 1px solid var(--ground-3);
+    padding: 0.625rem 1rem;
+    vertical-align: top;
+  }
+
+  .doc-table td:first-child {
+    white-space: nowrap;
+  }
+
+  .doc-table td {
+    white-space: normal;
+  }
+}
+
+@layer components {
+  .doc-prose h2 code,
+  .doc-prose h3 code,
+  .doc-prose h4 code {
+    background: transparent;
+    font-size: 1em;
+    padding: 0;
+  }
 }
