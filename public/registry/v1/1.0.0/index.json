@@ -1,0 +1,1372 @@
+{
+  "$schema": "https://unpkg.com/@atarashi/schema/schemas/registry-index.schema.json",
+  "indexVersion": 1,
+  "version": "1.0.0",
+  "updatedAt": "2026-09-11T01:35:12.358Z",
+  "entries": [
+    {
+      "id": "auth/jwt",
+      "kind": "blueprint",
+      "name": "JWT authentication",
+      "version": "1.0.0",
+      "description": "Stateless JWT auth: signing helpers, bcrypt password hashing and a bearer/cookie guard.",
+      "category": "auth",
+      "tags": [
+        "auth",
+        "jwt",
+        "bcrypt",
+        "security"
+      ],
+      "provides": [
+        "auth",
+        "auth:jwt"
+      ],
+      "requires": [
+        "http",
+        "config:env"
+      ],
+      "conflicts": [
+        "auth"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/auth-jwt-1.0.0.tgz",
+      "integrity": "sha256-yT3s/hof51rjOByK7WnbzmkjRLPIok8au6sb02RrCeg=",
+      "bundled": true
+    },
+    {
+      "id": "auth/session",
+      "kind": "blueprint",
+      "name": "Session authentication",
+      "version": "1.0.0",
+      "description": "Cookie-session auth for Express: signed session middleware, bcrypt hashing and a guard.",
+      "category": "auth",
+      "tags": [
+        "auth",
+        "session",
+        "cookie",
+        "security"
+      ],
+      "provides": [
+        "auth",
+        "auth:session"
+      ],
+      "requires": [
+        "http:express",
+        "config:env"
+      ],
+      "conflicts": [
+        "auth"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/auth-session-1.0.0.tgz",
+      "integrity": "sha256-zoVKdYJbKndhyhuLmeUE2SQs3aCviXxCIF5z/oGuOCg=",
+      "bundled": true
+    },
+    {
+      "id": "ci/github",
+      "kind": "blueprint",
+      "name": "GitHub Actions",
+      "version": "1.0.0",
+      "description": "A CI workflow that installs, lints, typechecks, builds and tests on every push and pull request.",
+      "category": "ci",
+      "tags": [
+        "ci",
+        "github-actions",
+        "automation"
+      ],
+      "provides": [
+        "ci",
+        "ci:github"
+      ],
+      "requires": [
+        "runtime:node"
+      ],
+      "conflicts": [
+        "ci"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/ci-github-1.0.0.tgz",
+      "integrity": "sha256-T1spLSJD+v+UnfO/3h3LoGJcvrzJe59fhYAlBzAqMLg=",
+      "bundled": true
+    },
+    {
+      "id": "ci/gitlab",
+      "kind": "blueprint",
+      "name": "GitLab CI",
+      "version": "1.0.0",
+      "description": "A GitLab pipeline that installs, lints, typechecks, builds and tests with a cached dependency store.",
+      "category": "ci",
+      "tags": [
+        "ci",
+        "gitlab",
+        "automation"
+      ],
+      "provides": [
+        "ci",
+        "ci:gitlab"
+      ],
+      "requires": [
+        "runtime:node"
+      ],
+      "conflicts": [
+        "ci"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/ci-gitlab-1.0.0.tgz",
+      "integrity": "sha256-OlDVy0SW6JcY3yxIInhsBV8BjWl2gOJhjrMJmXjqWBw=",
+      "bundled": true
+    },
+    {
+      "id": "core/node-js",
+      "kind": "blueprint",
+      "name": "Node.js (JavaScript)",
+      "version": "1.0.0",
+      "description": "Node 20 ESM project in plain JavaScript, with jsconfig for editor navigation.",
+      "category": "core",
+      "tags": [
+        "javascript",
+        "node",
+        "core"
+      ],
+      "provides": [
+        "runtime:node",
+        "language",
+        "language:javascript"
+      ],
+      "requires": [],
+      "conflicts": [
+        "language"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/core-node-js-1.0.0.tgz",
+      "integrity": "sha256-eshaoReAw/FOAb/nEgLHnAGTzDicjnW4tp3dj/FNuGk=",
+      "bundled": true
+    },
+    {
+      "id": "core/node-ts",
+      "kind": "blueprint",
+      "name": "Node.js + TypeScript",
+      "version": "1.0.0",
+      "description": "Node 20 ESM project with strict TypeScript, tsx for development and tsc for builds.",
+      "category": "core",
+      "tags": [
+        "typescript",
+        "node",
+        "core"
+      ],
+      "provides": [
+        "runtime:node",
+        "language",
+        "language:typescript"
+      ],
+      "requires": [],
+      "conflicts": [
+        "language"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/core-node-ts-1.0.0.tgz",
+      "integrity": "sha256-QsBi+BONz4fzSq1hyAOzXLEV471V3Qw7TgW3pl5VpOA=",
+      "bundled": true
+    },
+    {
+      "id": "db/mongodb",
+      "kind": "blueprint",
+      "name": "MongoDB",
+      "version": "1.0.0",
+      "description": "MongoDB connection with a startup ping and a Compose service; hands over to Mongoose when present.",
+      "category": "database",
+      "tags": [
+        "mongodb",
+        "nosql",
+        "document",
+        "database"
+      ],
+      "provides": [
+        "database",
+        "database:document",
+        "database:mongodb"
+      ],
+      "requires": [
+        "runtime:node",
+        "config:env"
+      ],
+      "conflicts": [
+        "database"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/db-mongodb-1.0.0.tgz",
+      "integrity": "sha256-bZwRjlCHDC2TwNIiae+SQqsPmIGdKdzmtKICErbz5WI=",
+      "bundled": true
+    },
+    {
+      "id": "db/mysql",
+      "kind": "blueprint",
+      "name": "MySQL",
+      "version": "1.0.0",
+      "description": "MySQL connection pool with a startup health check and a Compose service.",
+      "category": "database",
+      "tags": [
+        "sql",
+        "mysql",
+        "mariadb",
+        "database"
+      ],
+      "provides": [
+        "database",
+        "database:sql",
+        "database:mysql"
+      ],
+      "requires": [
+        "runtime:node",
+        "config:env"
+      ],
+      "conflicts": [
+        "database"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/db-mysql-1.0.0.tgz",
+      "integrity": "sha256-wJKHpPhntOJ682s1AOklDwE61pa3sjRal/i3T1qpAws=",
+      "bundled": true
+    },
+    {
+      "id": "db/postgres",
+      "kind": "blueprint",
+      "name": "PostgreSQL",
+      "version": "1.0.0",
+      "description": "PostgreSQL connection pool with a startup health check and a Compose service.",
+      "category": "database",
+      "tags": [
+        "sql",
+        "postgres",
+        "postgresql",
+        "database"
+      ],
+      "provides": [
+        "database",
+        "database:sql",
+        "database:postgres"
+      ],
+      "requires": [
+        "runtime:node",
+        "config:env"
+      ],
+      "conflicts": [
+        "database"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/db-postgres-1.0.0.tgz",
+      "integrity": "sha256-cNPm6NN0XPCWrsetj0r+jqsKZZvAEYNOp9qob9Bf4Dw=",
+      "bundled": true
+    },
+    {
+      "id": "db/sqlite",
+      "kind": "blueprint",
+      "name": "SQLite",
+      "version": "1.0.0",
+      "description": "File-backed SQLite database via better-sqlite3, with WAL enabled and no server to run.",
+      "category": "database",
+      "tags": [
+        "sql",
+        "sqlite",
+        "database",
+        "embedded"
+      ],
+      "provides": [
+        "database",
+        "database:sql",
+        "database:sqlite"
+      ],
+      "requires": [
+        "runtime:node",
+        "config:env"
+      ],
+      "conflicts": [
+        "database"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/db-sqlite-1.0.0.tgz",
+      "integrity": "sha256-Q+cTK77mk8S6FHo682ygcRyYgxFO+HxZlcuu+OO82O0=",
+      "bundled": true
+    },
+    {
+      "id": "http/express",
+      "kind": "blueprint",
+      "name": "Express",
+      "version": "1.0.0",
+      "description": "Express HTTP server with a health check, a versioned router and JSON response helpers.",
+      "category": "http",
+      "tags": [
+        "express",
+        "http",
+        "server",
+        "rest"
+      ],
+      "provides": [
+        "http",
+        "http:express"
+      ],
+      "requires": [
+        "runtime:node",
+        "config:env"
+      ],
+      "conflicts": [
+        "http"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/http-express-1.0.0.tgz",
+      "integrity": "sha256-9owlKZhdaeJ0yyn13FJ5mu2780XxU3n8aJwGzlZ6vfo=",
+      "bundled": true
+    },
+    {
+      "id": "http/fastify",
+      "kind": "blueprint",
+      "name": "Fastify",
+      "version": "1.0.0",
+      "description": "Fastify HTTP server with structured logging, a health check and a versioned route prefix.",
+      "category": "http",
+      "tags": [
+        "fastify",
+        "http",
+        "server",
+        "rest"
+      ],
+      "provides": [
+        "http",
+        "http:fastify"
+      ],
+      "requires": [
+        "runtime:node",
+        "config:env"
+      ],
+      "conflicts": [
+        "http"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/http-fastify-1.0.0.tgz",
+      "integrity": "sha256-FGhcCWYdGm0yiffvDTknvisuScT5uWBopYeicqQ0NQY=",
+      "bundled": true
+    },
+    {
+      "id": "http/hono",
+      "kind": "blueprint",
+      "name": "Hono",
+      "version": "1.0.0",
+      "description": "Hono HTTP server on the Node adapter, with a health check and a versioned route prefix.",
+      "category": "http",
+      "tags": [
+        "hono",
+        "http",
+        "server",
+        "rest"
+      ],
+      "provides": [
+        "http",
+        "http:hono"
+      ],
+      "requires": [
+        "runtime:node",
+        "config:env"
+      ],
+      "conflicts": [
+        "http"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/http-hono-1.0.0.tgz",
+      "integrity": "sha256-dDeVY4AJzXkw2LMxI5vsK3/fvOKCbYC9wT+0lXaJpDA=",
+      "bundled": true
+    },
+    {
+      "id": "infra/docker",
+      "kind": "blueprint",
+      "name": "Dockerfile",
+      "version": "1.0.0",
+      "description": "Multi-stage Dockerfile that builds with the project's package manager and runs as a non-root user.",
+      "category": "infra",
+      "tags": [
+        "docker",
+        "container",
+        "infra"
+      ],
+      "provides": [
+        "infra:docker"
+      ],
+      "requires": [
+        "runtime:node"
+      ],
+      "conflicts": [],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/infra-docker-1.0.0.tgz",
+      "integrity": "sha256-JmQY92DLnu9q2Youek93uvy0hVO9lXMsBitvJokAEQw=",
+      "bundled": true
+    },
+    {
+      "id": "infra/docker-compose",
+      "kind": "blueprint",
+      "name": "Docker Compose",
+      "version": "1.0.0",
+      "description": "A Compose file for the app that database blueprints extend with their own service and volume.",
+      "category": "infra",
+      "tags": [
+        "docker",
+        "compose",
+        "infra"
+      ],
+      "provides": [
+        "infra:compose"
+      ],
+      "requires": [
+        "infra:docker"
+      ],
+      "conflicts": [],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/infra-docker-compose-1.0.0.tgz",
+      "integrity": "sha256-Wcatq2JmUJLuqKDHYLCuIQj1GUOZVY0h2rkwfswJJ0s=",
+      "bundled": true
+    },
+    {
+      "id": "lint/biome",
+      "kind": "blueprint",
+      "name": "Biome",
+      "version": "1.0.0",
+      "description": "Biome as the single linter and formatter: one binary, one config, no plugin matrix.",
+      "category": "lint",
+      "tags": [
+        "biome",
+        "lint",
+        "format"
+      ],
+      "provides": [
+        "lint",
+        "lint:biome",
+        "format"
+      ],
+      "requires": [
+        "runtime:node"
+      ],
+      "conflicts": [
+        "lint",
+        "format"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/lint-biome-1.0.0.tgz",
+      "integrity": "sha256-Dk58lEJ1yg4i12h4Rgx6qQmmx9hP7SYE+vx7Bl7r61s=",
+      "bundled": true
+    },
+    {
+      "id": "lint/eslint-prettier",
+      "kind": "blueprint",
+      "name": "ESLint + Prettier",
+      "version": "1.0.0",
+      "description": "Flat-config ESLint for correctness and Prettier for formatting, with the two kept from fighting.",
+      "category": "lint",
+      "tags": [
+        "eslint",
+        "prettier",
+        "lint",
+        "format"
+      ],
+      "provides": [
+        "lint",
+        "lint:eslint",
+        "format"
+      ],
+      "requires": [
+        "runtime:node"
+      ],
+      "conflicts": [
+        "lint",
+        "format"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/lint-eslint-prettier-1.0.0.tgz",
+      "integrity": "sha256-iBL6OwjG2QEHNGdOCegKTMx4Ykttv978V7kKn2LGR2g=",
+      "bundled": true
+    },
+    {
+      "id": "meta/editorconfig",
+      "kind": "blueprint",
+      "name": "EditorConfig",
+      "version": "1.0.0",
+      "description": "Editor-agnostic indentation, charset and newline settings so diffs stay clean across machines.",
+      "category": "meta",
+      "tags": [
+        "editorconfig",
+        "meta",
+        "style"
+      ],
+      "provides": [
+        "meta:editorconfig"
+      ],
+      "requires": [],
+      "conflicts": [],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/meta-editorconfig-1.0.0.tgz",
+      "integrity": "sha256-uDTfasgSgfPitsq1wbL2xt1MxK1ML6uU0FVkF9M2sM0=",
+      "bundled": true
+    },
+    {
+      "id": "meta/husky",
+      "kind": "blueprint",
+      "name": "Husky + lint-staged",
+      "version": "1.0.0",
+      "description": "A pre-commit hook that lints and formats only the files being committed.",
+      "category": "meta",
+      "tags": [
+        "husky",
+        "lint-staged",
+        "git",
+        "hooks"
+      ],
+      "provides": [
+        "meta:git-hooks"
+      ],
+      "requires": [
+        "runtime:node",
+        "lint"
+      ],
+      "conflicts": [],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/meta-husky-1.0.0.tgz",
+      "integrity": "sha256-Mny1YfSPcqyLZzU2Ed37oDKWJSg+usYYwyE3TMttIto=",
+      "bundled": true
+    },
+    {
+      "id": "meta/license",
+      "kind": "blueprint",
+      "name": "License file",
+      "version": "1.0.0",
+      "description": "Writes the LICENSE text for the license chosen at generation time.",
+      "category": "meta",
+      "tags": [
+        "license",
+        "meta",
+        "legal"
+      ],
+      "provides": [
+        "meta:license"
+      ],
+      "requires": [],
+      "conflicts": [],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/meta-license-1.0.0.tgz",
+      "integrity": "sha256-o7XdWSJ8Z7UcXfpw32J64+I3Us4di4nR+ONY/aRcjuU=",
+      "bundled": true
+    },
+    {
+      "id": "meta/readme",
+      "kind": "blueprint",
+      "name": "README",
+      "version": "1.0.0",
+      "description": "A README describing exactly this project: its scripts, its environment variables and its blueprints.",
+      "category": "meta",
+      "tags": [
+        "readme",
+        "docs",
+        "meta"
+      ],
+      "provides": [
+        "meta:readme"
+      ],
+      "requires": [],
+      "conflicts": [],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/meta-readme-1.0.0.tgz",
+      "integrity": "sha256-eTVLAjK/1Dqjf8Qbymy05h4sijjLhXnBVakTetwBdR8=",
+      "bundled": true
+    },
+    {
+      "id": "mw/cors",
+      "kind": "blueprint",
+      "name": "CORS",
+      "version": "1.0.0",
+      "description": "Cross-origin request handling driven by a CORS_ORIGIN allow-list, for Express, Fastify or Hono.",
+      "category": "middleware",
+      "tags": [
+        "cors",
+        "middleware",
+        "security"
+      ],
+      "provides": [
+        "middleware:cors"
+      ],
+      "requires": [
+        "http",
+        "config:env"
+      ],
+      "conflicts": [],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/mw-cors-1.0.0.tgz",
+      "integrity": "sha256-L6rLoUS5pEYZlkK+uNNriPTXVeFbQArSRu/g/bCVMzY=",
+      "bundled": true
+    },
+    {
+      "id": "mw/error-handler",
+      "kind": "blueprint",
+      "name": "Error handler",
+      "version": "1.0.0",
+      "description": "One consistent JSON error shape: an HttpError class, Zod validation mapping and no stack leaks.",
+      "category": "middleware",
+      "tags": [
+        "errors",
+        "middleware",
+        "zod"
+      ],
+      "provides": [
+        "middleware:error-handler"
+      ],
+      "requires": [
+        "http",
+        "validation",
+        "config:env"
+      ],
+      "conflicts": [],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/mw-error-handler-1.0.0.tgz",
+      "integrity": "sha256-TS3w3U0QS2n0SX8Nw/AYDkGoD04T92ILjk7R+IL6D70=",
+      "bundled": true
+    },
+    {
+      "id": "mw/helmet",
+      "kind": "blueprint",
+      "name": "Security headers",
+      "version": "1.0.0",
+      "description": "Sensible default security headers (CSP, HSTS, frame options) for Express, Fastify or Hono.",
+      "category": "middleware",
+      "tags": [
+        "helmet",
+        "security",
+        "headers",
+        "middleware"
+      ],
+      "provides": [
+        "middleware:security-headers"
+      ],
+      "requires": [
+        "http"
+      ],
+      "conflicts": [],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/mw-helmet-1.0.0.tgz",
+      "integrity": "sha256-/CPxQrky3ISX/owCcYqT9wygmUyxViXxkHNhApQa6YU=",
+      "bundled": true
+    },
+    {
+      "id": "mw/rate-limit",
+      "kind": "blueprint",
+      "name": "Rate limiting",
+      "version": "1.0.0",
+      "description": "Per-IP request throttling with standard RateLimit headers, for Express, Fastify or Hono.",
+      "category": "middleware",
+      "tags": [
+        "rate-limit",
+        "throttling",
+        "security",
+        "middleware"
+      ],
+      "provides": [
+        "middleware:rate-limit"
+      ],
+      "requires": [
+        "http"
+      ],
+      "conflicts": [],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/mw-rate-limit-1.0.0.tgz",
+      "integrity": "sha256-t4jZxxoElZjoV8UUzncT3D+8ty8My7iHVykGyvJOuLw=",
+      "bundled": true
+    },
+    {
+      "id": "obs/morgan-logger",
+      "kind": "blueprint",
+      "name": "Morgan request log",
+      "version": "1.0.0",
+      "description": "Human-readable HTTP request logging for Express in development, combined format in production.",
+      "category": "observability",
+      "tags": [
+        "logging",
+        "morgan",
+        "http",
+        "observability"
+      ],
+      "provides": [
+        "logging",
+        "logging:morgan"
+      ],
+      "requires": [
+        "http:express",
+        "config:env"
+      ],
+      "conflicts": [
+        "logging"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/obs-morgan-logger-1.0.0.tgz",
+      "integrity": "sha256-hq9BMgdCR5+UeezZglz3zw3HdeW5pxjtYvJMMTjMGcY=",
+      "bundled": true
+    },
+    {
+      "id": "obs/pino",
+      "kind": "blueprint",
+      "name": "Pino structured logging",
+      "version": "1.0.0",
+      "description": "A shared Pino logger with pretty output in development and JSON lines in production.",
+      "category": "observability",
+      "tags": [
+        "logging",
+        "pino",
+        "json",
+        "observability"
+      ],
+      "provides": [
+        "logging",
+        "logging:pino"
+      ],
+      "requires": [
+        "runtime:node",
+        "config:env"
+      ],
+      "conflicts": [
+        "logging"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/obs-pino-1.0.0.tgz",
+      "integrity": "sha256-e+YSTLKN4ilVVEquDKlc2eZWbVv3x9ekZehkM2Pcn1U=",
+      "bundled": true
+    },
+    {
+      "id": "orm/drizzle",
+      "kind": "blueprint",
+      "name": "Drizzle ORM",
+      "version": "1.0.0",
+      "description": "Drizzle ORM wired to the selected SQL database, with a starter schema and drizzle-kit scripts.",
+      "category": "orm",
+      "tags": [
+        "drizzle",
+        "orm",
+        "sql",
+        "typescript"
+      ],
+      "provides": [
+        "orm",
+        "orm:drizzle"
+      ],
+      "requires": [
+        "database:sql",
+        "language:typescript"
+      ],
+      "conflicts": [
+        "orm"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/orm-drizzle-1.0.0.tgz",
+      "integrity": "sha256-LRubhUIPI+bxMjypvBEXpzyXsDaLhWLvyOq3GwmaPP4=",
+      "bundled": true
+    },
+    {
+      "id": "orm/mongoose",
+      "kind": "blueprint",
+      "name": "Mongoose",
+      "version": "1.0.0",
+      "description": "Mongoose connection lifecycle and a starter model for a MongoDB project.",
+      "category": "orm",
+      "tags": [
+        "mongoose",
+        "odm",
+        "mongodb"
+      ],
+      "provides": [
+        "orm",
+        "orm:mongoose"
+      ],
+      "requires": [
+        "database:mongodb"
+      ],
+      "conflicts": [
+        "orm"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/orm-mongoose-1.0.0.tgz",
+      "integrity": "sha256-XsFMZEiyiIA2tEByvcgPqyCuASH/QHGkugieyed3Usg=",
+      "bundled": true
+    },
+    {
+      "id": "orm/prisma",
+      "kind": "blueprint",
+      "name": "Prisma ORM",
+      "version": "1.0.0",
+      "description": "Prisma schema and client wired to the selected SQL database, with migrate and studio scripts.",
+      "category": "orm",
+      "tags": [
+        "prisma",
+        "orm",
+        "sql",
+        "typescript"
+      ],
+      "provides": [
+        "orm",
+        "orm:prisma"
+      ],
+      "requires": [
+        "database:sql",
+        "language:typescript"
+      ],
+      "conflicts": [
+        "orm"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/orm-prisma-1.0.0.tgz",
+      "integrity": "sha256-BwUsUs9dp0BE/A0k1wCP6aBIdu2fHn6P42IGC2Mwq8Q=",
+      "bundled": true
+    },
+    {
+      "id": "preset/backend-minimal",
+      "kind": "preset",
+      "name": "Minimal TypeScript API",
+      "version": "1.0.0",
+      "description": "Express and TypeScript with validated config and one error shape. No database.",
+      "category": "preset",
+      "tags": [
+        "backend",
+        "typescript",
+        "express",
+        "minimal"
+      ],
+      "provides": [],
+      "requires": [],
+      "conflicts": [],
+      "engines": {},
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/preset-backend-minimal-1.0.0.tgz",
+      "integrity": "sha256-OX92cEHjK6axBp9Qtj11zMBY9E2XIjp5FHth+aN8h0A=",
+      "bundled": true
+    },
+    {
+      "id": "preset/backend-mongo",
+      "kind": "preset",
+      "name": "MongoDB REST API",
+      "version": "1.0.0",
+      "description": "Express + MongoDB + Mongoose + JWT + Docker, in strict TypeScript.",
+      "category": "preset",
+      "tags": [
+        "backend",
+        "typescript",
+        "express",
+        "mongodb"
+      ],
+      "provides": [],
+      "requires": [],
+      "conflicts": [],
+      "engines": {},
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/preset-backend-mongo-1.0.0.tgz",
+      "integrity": "sha256-yI3qMwVQY4GMWctAjhq62TQwrGfJ1idXrXBBBtjqE/s=",
+      "bundled": true
+    },
+    {
+      "id": "preset/backend-ts",
+      "kind": "preset",
+      "name": "TypeScript REST API",
+      "version": "1.0.0",
+      "description": "Express + PostgreSQL + Drizzle + JWT + Docker, in strict TypeScript.",
+      "category": "preset",
+      "tags": [
+        "backend",
+        "typescript",
+        "express",
+        "postgres"
+      ],
+      "provides": [],
+      "requires": [],
+      "conflicts": [],
+      "engines": {},
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/preset-backend-ts-1.0.0.tgz",
+      "integrity": "sha256-bBMy1GcBmNmj8ZwLZhAHUk8+P/DJJiI5U2k9HQXsgEc=",
+      "bundled": true
+    },
+    {
+      "id": "preset/frontend-only",
+      "kind": "preset",
+      "name": "React single-page app",
+      "version": "1.0.0",
+      "description": "React, Vite and Tailwind on their own, with Biome for linting and formatting.",
+      "category": "preset",
+      "tags": [
+        "frontend",
+        "react",
+        "vite",
+        "spa"
+      ],
+      "provides": [],
+      "requires": [],
+      "conflicts": [],
+      "engines": {},
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/preset-frontend-only-1.0.0.tgz",
+      "integrity": "sha256-zfqEhBis4YZjMmr9pTL9ZvdUlLRpi/ISchrH+tdCTSY=",
+      "bundled": true
+    },
+    {
+      "id": "preset/fullstack-angular",
+      "kind": "preset",
+      "name": "Angular frontend + TypeScript API",
+      "version": "1.0.0",
+      "description": "The backend-ts API at the root with an Angular and Tailwind app under web/.",
+      "category": "preset",
+      "tags": [
+        "fullstack",
+        "angular",
+        "express",
+        "postgres"
+      ],
+      "provides": [],
+      "requires": [],
+      "conflicts": [],
+      "engines": {},
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/preset-fullstack-angular-1.0.0.tgz",
+      "integrity": "sha256-5q4bf+k6xFdDRt8Yl/4tTK1LnBGQRR0Ov+aIsasWF64=",
+      "bundled": true
+    },
+    {
+      "id": "preset/fullstack-react",
+      "kind": "preset",
+      "name": "React frontend + TypeScript API",
+      "version": "1.0.0",
+      "description": "The backend-ts API at the root with a React, Vite and Tailwind app under web/.",
+      "category": "preset",
+      "tags": [
+        "fullstack",
+        "react",
+        "vite",
+        "express",
+        "postgres"
+      ],
+      "provides": [],
+      "requires": [],
+      "conflicts": [],
+      "engines": {},
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/preset-fullstack-react-1.0.0.tgz",
+      "integrity": "sha256-mUPuOo0H3yEJmRzo2vJi0vHt1i8vvQ3W34Jok4J5Io8=",
+      "bundled": true
+    },
+    {
+      "id": "test/jest",
+      "kind": "blueprint",
+      "name": "Jest",
+      "version": "1.0.0",
+      "description": "Jest in ESM mode, with ts-jest for TypeScript projects and a health-check test.",
+      "category": "test",
+      "tags": [
+        "jest",
+        "test",
+        "coverage"
+      ],
+      "provides": [
+        "test",
+        "test:jest"
+      ],
+      "requires": [
+        "runtime:node"
+      ],
+      "conflicts": [
+        "test"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/test-jest-1.0.0.tgz",
+      "integrity": "sha256-027IVqRC2QUFBrxEmAko/0yuAiT12PLLjW5jYTEyFnQ=",
+      "bundled": true
+    },
+    {
+      "id": "test/vitest",
+      "kind": "blueprint",
+      "name": "Vitest",
+      "version": "1.0.0",
+      "description": "Vitest with a coverage gate and a health-check test wired to the chosen HTTP framework.",
+      "category": "test",
+      "tags": [
+        "vitest",
+        "test",
+        "coverage"
+      ],
+      "provides": [
+        "test",
+        "test:vitest"
+      ],
+      "requires": [
+        "runtime:node"
+      ],
+      "conflicts": [
+        "test"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/test-vitest-1.0.0.tgz",
+      "integrity": "sha256-AD3+RXvF5OUTGCvmWERlAIa3zgL0sc7zjHI32NI8o0I=",
+      "bundled": true
+    },
+    {
+      "id": "validation/zod",
+      "kind": "blueprint",
+      "name": "Zod validation",
+      "version": "1.0.0",
+      "description": "Zod schemas plus a validated, typed environment loader that fails fast on bad config.",
+      "category": "validation",
+      "tags": [
+        "zod",
+        "validation",
+        "config",
+        "env"
+      ],
+      "provides": [
+        "validation",
+        "validation:zod",
+        "config:env"
+      ],
+      "requires": [
+        "runtime:node"
+      ],
+      "conflicts": [
+        "validation"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.11"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/validation-zod-1.0.0.tgz",
+      "integrity": "sha256-6ndmIyv31wKlX69ObKqcFb0GS/c7pe+G8cNJFduMdug=",
+      "bundled": true
+    },
+    {
+      "id": "web/angular-tailwind",
+      "kind": "blueprint",
+      "name": "Angular + Tailwind",
+      "version": "1.0.0",
+      "description": "Standalone-component Angular app with Tailwind v4 via PostCSS and Vitest for unit tests.",
+      "category": "frontend",
+      "tags": [
+        "angular",
+        "tailwind",
+        "frontend",
+        "spa"
+      ],
+      "provides": [
+        "ui",
+        "ui:angular"
+      ],
+      "requires": [
+        "language:typescript"
+      ],
+      "conflicts": [
+        "ui"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.19"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/web-angular-tailwind-1.0.0.tgz",
+      "integrity": "sha256-8kcOJ1ifuLEEJxFOHwXXv73qK3QiuYCP1Je/d6QpI3U=",
+      "bundled": true
+    },
+    {
+      "id": "web/next",
+      "kind": "blueprint",
+      "name": "Next.js + Tailwind",
+      "version": "1.0.0",
+      "description": "Next.js App Router with Tailwind v4, TypeScript and the default React Server Component setup.",
+      "category": "frontend",
+      "tags": [
+        "next",
+        "react",
+        "tailwind",
+        "frontend",
+        "ssr"
+      ],
+      "provides": [
+        "ui",
+        "ui:next"
+      ],
+      "requires": [
+        "language:typescript"
+      ],
+      "conflicts": [
+        "ui"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.19"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/web-next-1.0.0.tgz",
+      "integrity": "sha256-WdlrTbF9KfBYjKeDvX3LLb2E0hkrN4kPNiuv8326S/I=",
+      "bundled": true
+    },
+    {
+      "id": "web/react-vite-tailwind",
+      "kind": "blueprint",
+      "name": "React + Vite + Tailwind",
+      "version": "1.0.0",
+      "description": "React 19 on Vite with the Tailwind v4 plugin, strict TypeScript and Vitest.",
+      "category": "frontend",
+      "tags": [
+        "react",
+        "vite",
+        "tailwind",
+        "frontend",
+        "spa"
+      ],
+      "provides": [
+        "ui",
+        "ui:react"
+      ],
+      "requires": [
+        "language:typescript"
+      ],
+      "conflicts": [
+        "ui"
+      ],
+      "engines": {
+        "atarashi": ">=1.0.0-0 <2.0.0",
+        "node": ">=20.19"
+      },
+      "experimental": false,
+      "deprecated": false,
+      "tarball": "bp/web-react-vite-tailwind-1.0.0.tgz",
+      "integrity": "sha256-VmDeG1r6DEIkUIPpvAsEzQ7qhAIOnD5BitQ2A/7nE7w=",
+      "bundled": true
+    }
+  ],
+  "versionManifest": {
+    "version": "1.0.0",
+    "updatedAt": "2026-09-08T00:00:00.000Z",
+    "packages": {
+      "@biomejs/biome": "^2.3.14",
+      "@eslint/js": "^9.37.0",
+      "@fastify/cors": "^11.1.0",
+      "@fastify/helmet": "^13.0.2",
+      "@fastify/rate-limit": "^10.3.0",
+      "@hono/node-server": "^1.19.5",
+      "@prisma/client": "^6.16.2",
+      "@types/bcryptjs": "^3.0.0",
+      "@types/better-sqlite3": "^7.6.13",
+      "@types/cookie-parser": "^1.4.9",
+      "@types/cors": "^2.8.19",
+      "@types/express": "^4.17.23",
+      "@types/express-session": "^1.18.2",
+      "@types/jsonwebtoken": "^9.0.10",
+      "@types/morgan": "^1.9.10",
+      "@types/node": "^22.19.0",
+      "@types/pg": "^8.15.5",
+      "@types/supertest": "^6.0.3",
+      "@typescript-eslint/eslint-plugin": "^8.45.0",
+      "@typescript-eslint/parser": "^8.45.0",
+      "@vitest/coverage-v8": "^3.2.4",
+      "bcryptjs": "^3.0.2",
+      "better-sqlite3": "^13.0.3",
+      "cookie-parser": "^1.4.7",
+      "cors": "^2.8.5",
+      "dotenv": "^17.4.2",
+      "drizzle-kit": "^0.31.5",
+      "drizzle-orm": "^0.44.6",
+      "eslint": "^9.37.0",
+      "eslint-config-prettier": "^10.1.8",
+      "express": "^4.21.2",
+      "express-rate-limit": "^7.5.1",
+      "express-session": "^1.18.2",
+      "fastify": "^5.6.1",
+      "helmet": "^8.1.0",
+      "hono": "^4.9.10",
+      "hono-rate-limiter": "^0.4.2",
+      "husky": "^9.1.7",
+      "jest": "^30.2.0",
+      "jsonwebtoken": "^9.0.2",
+      "lint-staged": "^16.2.7",
+      "mongodb": "^6.20.0",
+      "mongoose": "^8.19.0",
+      "morgan": "^1.10.1",
+      "mysql2": "^3.15.2",
+      "pg": "^8.16.3",
+      "pino": "^9.13.1",
+      "pino-http": "^10.5.0",
+      "pino-pretty": "^13.1.2",
+      "prettier": "^3.6.2",
+      "prisma": "^6.16.2",
+      "supertest": "^7.1.4",
+      "ts-jest": "^29.4.5",
+      "tsx": "^4.20.6",
+      "typescript": "^5.9.3",
+      "typescript-eslint": "^8.45.0",
+      "vitest": "^3.2.4",
+      "zod": "^3.25.76"
+    }
+  },
+  "integrity": "sha256-oA7Me5SV4ACKYDVaMSsQ9XAIyk8juIPRA7P0mItfCGk="
+}
